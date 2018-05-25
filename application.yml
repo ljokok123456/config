@@ -1,10 +1,14 @@
-server:
-  port: 8090
-eureka: 
-  client:
-    service-url:
-      defaultZoze: http://localhost:8761/eureka/
 spring:
+  profiles:
+    active:
+      - dev
+---
+spring: 
+  profiles: dev
   application:
-    name: service-ribbon
-  
+    name: cloud-config-dev
+---
+spring: 
+  profiles: test
+  application:
+    name: cloud-config-test
